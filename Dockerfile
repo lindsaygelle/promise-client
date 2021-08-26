@@ -1,3 +1,5 @@
 FROM node:alpine
 
-EXPOSE 3000
+ARG ADDR
+
+EXPOSE ${ADDR}
