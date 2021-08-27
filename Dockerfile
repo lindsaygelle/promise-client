@@ -4,9 +4,13 @@ ARG ADDR
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json", "./"]
+COPY package.json ./
+
+COPY package-lock.json ./
 
 RUN npm install --production
+
+RUN chown -R node /app/node_modules
 
 COPY . .
 
